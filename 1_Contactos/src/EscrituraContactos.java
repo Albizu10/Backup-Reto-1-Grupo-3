@@ -37,7 +37,7 @@ public class EscrituraContactos {
             System.out.println("País:");
             pais = sc.nextLine();
 
-            bfw.write("\n'" + nombre + " " + apellido + "','" + correo + "','" + telefono +  "','" + ciudad + "','" + pais + "'");
+            bfw.write("\n\"" + nombre + " " + apellido + "\",\"" + correo + "\",\"" + telefono +  "\",\"" + ciudad + "\",\"" + pais + "\"");
             
             bfw.close();
             sc.close();
