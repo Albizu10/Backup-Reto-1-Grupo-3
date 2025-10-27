@@ -15,11 +15,14 @@ public class EscrituraContactos {
 
             Scanner sc = new Scanner(System.in);
 
-            String nombreCompleto, correo, ciudad, pais;
+            String nombre, apellido, correo, ciudad, pais;
             int telefono;
 
             System.out.println("Nombre: ");
-            nombreCompleto = sc.nextLine();
+            nombre = sc.nextLine();
+
+            System.out.println("Apellido: ");
+            apellido = sc.nextLine();
 
             System.out.println("Correo electrónico: ");
             correo = sc.nextLine();
@@ -34,7 +37,7 @@ public class EscrituraContactos {
             System.out.println("País:");
             pais = sc.nextLine();
 
-            bfw.write("\n'" + nombreCompleto + "','" + correo + "','" + telefono +  "','" + ciudad + "','" + pais + "'");
+            bfw.write("\n'" + nombre + " " + apellido + "','" + correo + "','" + telefono +  "','" + ciudad + "','" + pais + "'");
             
             bfw.close();
             sc.close();
