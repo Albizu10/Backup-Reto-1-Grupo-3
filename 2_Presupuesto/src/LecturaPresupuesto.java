@@ -4,10 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class LecturaPresupuesto {
-    /*
-     * 
-     * Definición de colores para imprimir en la terminal
-     */
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_RESET = "\u001B[0m";
 
@@ -24,9 +20,8 @@ public class LecturaPresupuesto {
 
             while ((byteLeido = filein.read()) != -1) {
                 //Escribir en hexadecimal (contiene imagenes)
-                System.out.printf("%02X\n", byteLeido);
+                System.out.printf("%02X ", byteLeido);
             }
-
             filein.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
