@@ -14,7 +14,7 @@ public class EscrituraContactos {
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_RESET = "\u001B[0m";
 
-    public static Boolean validarEmail(String correo) {
+    private static Boolean validarEmail(String correo) {
         Pattern pattern = Pattern.compile("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$");
         Matcher matcher = pattern.matcher(correo);
         return matcher.matches();
@@ -72,9 +72,9 @@ public class EscrituraContactos {
                                 + ciudad + "\",\"" + pais + "\"");
 
                         System.out.println(ANSI_GREEN
-                                + "\n----------------------------------------------------\n\nLa escritura del contacto "
+                                + "\n---------------------------------------------------------------------\n\nEscribiendo los datos del contacto: "
                                 + nombre + " " + apellido
-                                + "se ha realizado correctamente. \n\n----------------------------------------------------\n"
+                                + " \n\n"
                                 + ANSI_RESET);
                     } else if (opcion == 2) {
                         seguirEscribiendo = false;
