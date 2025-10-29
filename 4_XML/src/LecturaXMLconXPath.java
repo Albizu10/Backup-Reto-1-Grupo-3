@@ -20,7 +20,7 @@ import org.xml.sax.SAXException;
 import java.io.IOException;
 import javax.xml.xpath.XPathExpressionException;
 
-public class LecturaXML {
+public class LecturaXMLconXPath {
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_RESET = "\u001B[0m";
@@ -59,7 +59,6 @@ public class LecturaXML {
                     System.out.println("Ciudad: " + ciudad);
                     System.out.println("País: " + pais);
                     System.out.println(ANSI_GREEN + "\n-----------------------------------\n" + ANSI_RESET);
-
                 }
             }
 
