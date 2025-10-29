@@ -14,12 +14,6 @@ public class EscrituraContactos {
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_RESET = "\u001B[0m";
 
-    private static Boolean validarEmail(String correo) {
-        Pattern pattern = Pattern.compile("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$");
-        Matcher matcher = pattern.matcher(correo);
-        return matcher.matches();
-    }
-
     public static void main(String[] args) {
         try {
             File ruta = new File("contactos.csv");
@@ -99,5 +93,11 @@ public class EscrituraContactos {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static Boolean validarEmail(String correo) {
+        Pattern pattern = Pattern.compile("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$");
+        Matcher matcher = pattern.matcher(correo);
+        return matcher.matches();
     }
 }
