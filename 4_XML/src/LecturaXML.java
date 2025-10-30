@@ -34,13 +34,14 @@ public class LecturaXML {
                 if (nContacto.getNodeType() == Node.ELEMENT_NODE) {
                     Element contacto = (Element) nContacto;
                     
-                    
+                    String id = contacto.getAttribute("id");
                     String nombreCompleto = contacto.getElementsByTagName("NombreCompleto").item(0).getTextContent();
                     String correo = contacto.getElementsByTagName("CorreoElectronico").item(0).getTextContent();
                     String telefono = contacto.getElementsByTagName("Telefono").item(0).getTextContent();
                     String ciudad = contacto.getElementsByTagName("Ciudad").item(0).getTextContent();
                     String pais = contacto.getElementsByTagName("Pais").item(0).getTextContent();
 
+                    System.out.println("ID: " + id);
                     System.out.println("Nombre completo: " + nombreCompleto);
                     System.out.println("Correo: " + correo);
                     System.out.println("Teléfono: " + telefono);
