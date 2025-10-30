@@ -33,7 +33,8 @@ public class LecturaXML {
 
                 if (nContacto.getNodeType() == Node.ELEMENT_NODE) {
                     Element contacto = (Element) nContacto;
-
+                    
+                    
                     String nombreCompleto = contacto.getElementsByTagName("NombreCompleto").item(0).getTextContent();
                     String correo = contacto.getElementsByTagName("CorreoElectronico").item(0).getTextContent();
                     String telefono = contacto.getElementsByTagName("Telefono").item(0).getTextContent();
@@ -48,7 +49,6 @@ public class LecturaXML {
                     System.out.println(ANSI_GREEN + "\n-----------------------------------\n" + ANSI_RESET);
                 }
             }
-
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }

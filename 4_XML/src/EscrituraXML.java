@@ -24,7 +24,7 @@ public class EscrituraXML {
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.newDocument();
 
-            File ruta = new File("contactosEscritura.xml");
+            File ruta = new File("contactos.xml");
             StreamResult sr = new StreamResult(ruta);
 
             String[] arrayNomCompl = { "Ada Martinez", "Administrator", "Carla Jimenez", "Comercializadora Ruiz S.A.", "Juan Martinez", "Laura Hernandez" };
