@@ -48,7 +48,7 @@ public class EscrituraXML {
                 contacto.appendChild(nombreCompleto);
                 nombreCompleto.setTextContent(arrayNomCompl[i]);
 
-                Element correoElectronico = doc.createElement("correoElectronico");
+                Element correoElectronico = doc.createElement("CorreoElectronico");
                 contacto.appendChild(correoElectronico);
                 correoElectronico.setTextContent(arrayCorreos[i]);
 

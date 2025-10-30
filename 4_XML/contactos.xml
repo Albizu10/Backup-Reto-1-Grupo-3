@@ -2,42 +2,42 @@
 <Contactos>
     <Contacto id="1">
         <NombreCompleto>Ada Martinez</NombreCompleto>
-        <correoElectronico>adamartinez@techsolutuion.com</correoElectronico>
+        <CorreoElectronico>adamartinez@techsolutuion.com</CorreoElectronico>
         <Telefono>555-0101</Telefono>
         <Ciudad>Madrid</Ciudad>
         <Pais>España</Pais>
     </Contacto>
     <Contacto id="2">
         <NombreCompleto>Administrator</NombreCompleto>
-        <correoElectronico>ikmssaid24@lhusurbil.eus</correoElectronico>
+        <CorreoElectronico>ikmssaid24@lhusurbil.eus</CorreoElectronico>
         <Telefono>245-345</Telefono>
         <Ciudad>Madrid</Ciudad>
         <Pais>España</Pais>
     </Contacto>
     <Contacto id="3">
         <NombreCompleto>Carla Jimenez</NombreCompleto>
-        <correoElectronico>carlajimenez@techsolutuion.com</correoElectronico>
+        <CorreoElectronico>carlajimenez@techsolutuion.com</CorreoElectronico>
         <Telefono>555-0102</Telefono>
         <Ciudad>Santander</Ciudad>
         <Pais>España</Pais>
     </Contacto>
     <Contacto id="4">
         <NombreCompleto>Comercializadora Ruiz S.A.</NombreCompleto>
-        <correoElectronico>ruiz@gmail.com</correoElectronico>
+        <CorreoElectronico>ruiz@gmail.com</CorreoElectronico>
         <Telefono>5664-7631</Telefono>
         <Ciudad>Quito</Ciudad>
         <Pais>España</Pais>
     </Contacto>
     <Contacto id="5">
         <NombreCompleto>Juan Martinez</NombreCompleto>
-        <correoElectronico>juanmartinez@techsolutuion.com</correoElectronico>
+        <CorreoElectronico>juanmartinez@techsolutuion.com</CorreoElectronico>
         <Telefono>555-0103</Telefono>
         <Ciudad>Soria</Ciudad>
         <Pais>España</Pais>
     </Contacto>
     <Contacto id="6">
         <NombreCompleto>Laura Hernandez</NombreCompleto>
-        <correoElectronico>laurahernandez@gmail.com</correoElectronico>
+        <CorreoElectronico>laurahernandez@gmail.com</CorreoElectronico>
         <Telefono>6234-8909</Telefono>
         <Ciudad>Albacete</Ciudad>
         <Pais>España</Pais>
