@@ -130,7 +130,7 @@ public class ConsultaXML {
 
                 System.out.println(ANSI_GREEN + "\n¡CONTACTO ENCONTRADO!" + ANSI_RESET);
                 System.out.println(ANSI_GREEN + "\n------------------------------------" + ANSI_RESET);
-                System.out.println(ANSI_GREEN + "\nNombre compledo del contacto con correo '" + correoBuscado + "'': " + nombreCompleto + "\n" + ANSI_RESET);
+                System.out.println(ANSI_GREEN + "\nNombre completo del contacto con correo '" + correoBuscado + "'': " + nombreCompleto + "\n" + ANSI_RESET);
 
                 encontrado = true;
             } 
