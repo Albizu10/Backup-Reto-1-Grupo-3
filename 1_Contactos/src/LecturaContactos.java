@@ -25,62 +25,59 @@ public class LecturaContactos {
      * Permite al usuario leer contactos de un CSV.
      * @param args
      */
-    public static void main(String[] args) {
-        //Try catch principal para manejar excepciones de lectura
-        try {
-            //Definir la ruta del archivo CSV que contiene los contactos
-            File ruta = new File("contactos.csv");
+    public static void main(String[] args) {   
+        //Definir la ruta del archivo CSV que contiene los contactos
+        File ruta = new File("contactos.csv");
 
-            //Try with resources para cerrar los recursos automáticamente al finalizar
-            try(FileReader fr = new FileReader(ruta)){
-                //Inicializar recurso Buffered Reader
-                BufferedReader br = new BufferedReader(fr);
+        //Try with resources para cerrar los recursos automáticamente al finalizar
+        try(FileReader fr = new FileReader(ruta)){
+            //Inicializar recurso Buffered Reader
+            BufferedReader br = new BufferedReader(fr);
 
-                //Variable para almacenar cada línea leída del archivo
-                String linea;
+            //Variable para almacenar cada línea leída del archivo
+            String linea;
 
-                // Saltar la primera línea porque es el encabezado
-                br.readLine();
+            // Saltar la primera línea porque es el encabezado
+            br.readLine();
 
-                //Mensaje inicial
-                System.out.println(ANSI_CYAN + "\nLEYENDO CONTACTOS DEL FICHERO '" + ruta + "'" + ANSI_RESET);
-                System.out.println(ANSI_CYAN + "----------------------------------------------\n" + ANSI_RESET);
+            //Mensaje inicial
+            System.out.println(ANSI_CYAN + "\nLEYENDO CONTACTOS DEL FICHERO '" + ruta + "'" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "----------------------------------------------\n" + ANSI_RESET);
 
-                //Leer el archivo línea a línea
-                while ((linea = br.readLine()) != null) {
-                    //Eliminar las comillas
-                    String lineaSinSeparador = linea.replace("\"", "");
+            //Leer el archivo línea a línea
+            while ((linea = br.readLine()) != null) {
+                //Eliminar las comillas
+                String lineaSinSeparador = linea.replace("\"", "");
 
-                    //Separar los campos que están separados por comas
-                    String[] campos = lineaSinSeparador.split(",");
+                //Separar los campos que están separados por comas
+                String[] campos = lineaSinSeparador.split(",");
 
-                    //Si la línea tiene los 5 campos, imprimir los datos
-                    if (campos.length == 5) {
-                        //Asignar cada valor de X campo a su variable indibidual
-                        String nombreCompleto = campos[0];
-                        String correo = campos[1];
-                        String telefono = campos[2];
-                        String ciudad = campos[3];
-                        String pais = campos[4];
+                //Si la línea tiene los 5 campos, imprimir los datos
+                if (campos.length == 5) {
+                    //Asignar cada valor de X campo a su variable indibidual
+                    String nombreCompleto = campos[0];
+                    String correo = campos[1];
+                    String telefono = campos[2];
+                    String ciudad = campos[3];
+                    String pais = campos[4];
 
-                        //Imprimir los datos del contacto
-                        System.out.println("Nombre completo: " + nombreCompleto);
-                        System.out.println("Correo: " + correo);
-                        System.out.println("Teléfono: " + telefono);
-                        System.out.println("Ciudad: " + ciudad);
-                        System.out.println("País: " + pais);
-                        System.out.println(ANSI_GREEN + "\n-----------------------------------\n" + ANSI_RESET);
-                    } else {
-                    //SI NO
-                        //Informar al usuario que la línea X tiene un formato incorrecto
-                        System.out.println(ANSI_YELLOW + "Línea con formato incorrecto: \n" + ANSI_RESET + linea);
-                        System.out.println(ANSI_YELLOW + "\n-----------------------------------\n" + ANSI_RESET);
-                    }
+                    //Imprimir los datos del contacto
+                    System.out.println("Nombre completo: " + nombreCompleto);
+                    System.out.println("Correo: " + correo);
+                    System.out.println("Teléfono: " + telefono);
+                    System.out.println("Ciudad: " + ciudad);
+                    System.out.println("País: " + pais);
+                    System.out.println(ANSI_GREEN + "\n-----------------------------------\n" + ANSI_RESET);
+                } else {
+                //SI NO
+                    //Informar al usuario que la línea X tiene un formato incorrecto
+                    System.out.println(ANSI_YELLOW + "Línea con formato incorrecto: \n" + ANSI_RESET + linea);
+                    System.out.println(ANSI_YELLOW + "\n-----------------------------------\n" + ANSI_RESET);
                 }
-
-                System.out.println(ANSI_CYAN + "-----------------------------------\nLectura finalizada" + ANSI_RESET);
-                //FileReader y Buffered Reader se cierran automáticamente
             }
+
+            System.out.println(ANSI_CYAN + "-----------------------------------\nLectura finalizada" + ANSI_RESET);
+            //FileReader y Buffered Reader se cierran automáticamente
         } catch (FileNotFoundException e) {
             //Mensaje de excepción si el archivo no existe / no lo encuentra
             System.err.println(ANSI_RED);
