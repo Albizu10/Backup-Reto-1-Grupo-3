@@ -110,7 +110,8 @@ public class EscrituraContactos {
                         sc.nextLine(); //Limpiar para evitar bucles infinitos
                     }
                 }
-                //Se cierran File Writer,  BufferedWriter y Scanner    
+                sc.close();
+                //Se cierran File Writer y BufferedWriter
             }
 
         } catch (FileNotFoundException e) {
