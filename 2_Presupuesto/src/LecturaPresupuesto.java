@@ -6,7 +6,7 @@ import java.io.IOException;
 /**
  * Clase que permite leer un archivo PDF (en este caso, 'Presupuesto - S00007.pdf')
  * y mostrar su contenido en formato hexadecimal, ya que se trata de un archivo binario que contiene imagenes.
- * @version 1.1
+ * @version 1.0
  */
 public class LecturaPresupuesto {
     /**Código ANSI para restablecer el color de la terminal */
@@ -41,7 +41,7 @@ public class LecturaPresupuesto {
 
             System.out.println(ANSI_CYAN + "\n--------------------------------------\nLectura finalizada" + ANSI_RESET);
             //File Input Stream se cierra automáticamente al salir del try
-            
+
         } catch (FileNotFoundException e) {
             //Mensaje de excepción si el archivo no existe / no lo encuentra
             System.err.println(ANSI_RED);
