@@ -13,8 +13,6 @@ public class LecturaContactos {
     public static final String ANSI_GREEN = "\u001B[32m";
     //Para indicar que el formato de los datos introducidos no es correcto:
     public static final String ANSI_YELLOW = "\u001B[33m";
-    //Para indicar los datos que tiene que introducir el usuario:
-    public static final String ANSI_MAGENTA = "\u001B[35m";
     //Para imprimir los menus / enunciados:
     public static final String ANSI_CYAN = "\u001B[36m";
 
