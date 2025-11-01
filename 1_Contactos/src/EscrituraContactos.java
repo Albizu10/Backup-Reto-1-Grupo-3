@@ -23,7 +23,7 @@ public class EscrituraContactos {
     public static final String ANSI_CYAN = "\u001B[36m";
 
     public static void main(String[] args) {
-        //Try catch para manejar escepciones
+        //Try catch para manejar excepciones
         try {
             //Definir ruta del archivo donde se guardan los contactos
             File ruta = new File("contactos.csv");
