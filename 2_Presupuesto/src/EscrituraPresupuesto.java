@@ -4,6 +4,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/**
+ * Clase que lee y copia un archivo PDF (en este caso, 'Presupuesto - S00007.pdf').
+ * Muestra su contenido en formato hexadecimal, ya que se trata de un archivo binario que contiene imagenes.
+ * @version 1.0
+ */
 public class EscrituraPresupuesto {
     /**Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
