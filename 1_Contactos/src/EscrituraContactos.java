@@ -8,20 +8,32 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.IOException;
 
+/**
+ * Clase que permite escribir nuevos contactos en un archivo CSV, en este caso, 'contactos.csv'.
+ * Permite escribir más de un contacto a la vez y contiene validaciones de correo y teléfono.
+ * 
+ * @version 1.0
+ */
 public class EscrituraContactos {
-    //Restablecer el color:
+    /**Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
-    //Para imprimir los errores:
+    /**Código ANSI para imprimir los errores en color rojo en la terminal */
     public static final String ANSI_RED = "\u001B[31m";
-    //Para imprimir los resultados:
+    /**Código ANSI para imprimir los resultados en color verde en la terminal */
     public static final String ANSI_GREEN = "\u001B[32m";
-    //Para indicar que el formato de los datos introducidos no es correcto:
+    /**Código ANSI para indicar que el formato de los datos introducidos no es correcto, color amarillo en la terminal*/
     public static final String ANSI_YELLOW = "\u001B[33m";
-    //Para indicar los datos que tiene que introducir el usuario:
+    /**Código ANSI para indicar los datos que tiene que introducir el usuario en color magenta en la terminal */
     public static final String ANSI_MAGENTA = "\u001B[35m";
-    //Para imprimir los menus / enunciados:
+    /**Código ANSI para imprimir los menus / enunciados en color cyan en la terminal */
     public static final String ANSI_CYAN = "\u001B[36m";
 
+    /**
+     * 
+     * Método principal del programa. Permite al usuario introducir nuevos contactos
+     * y guardarlos en un archivo CSV, con validaciones de correo y teléfono.
+     * @param args
+     */
     public static void main(String[] args) {
         //Try catch para manejar excepciones
         try {
@@ -128,7 +140,12 @@ public class EscrituraContactos {
     
     }
 
-    //Función para validar que el formato del correo electrónico es correcto
+    /**
+     * Función para validar que el formato del correo electrónico es correcto mediante una expresión regular
+     *
+     * @param correo (dato que introduce el usuario)
+     * @return (si el formato es correcto devuelve true)
+     */
     private static Boolean validarCorreo(String correo) {
         //Definir el patrón: números / letras / guiones + @ + números / letras + . + 2-6 letras
         Pattern pattern = Pattern.compile("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$");
@@ -138,7 +155,12 @@ public class EscrituraContactos {
         return matcher.matches();
     }
 
-    //Función para validar que el formato del teléfono es correcto
+    /**
+     * Función para validar que el formato del teléfono es correcto mediante una expresión regular
+     * 
+     * @param telefono (dato que introduce el usuario)
+     * @return (si el formato es correcto devuelve true)
+     */
     private static boolean validarTelefono(String telefono) {
         //Permitir +, dígitos, espacios y guiones
         Pattern pattern = Pattern.compile("^[+]?[0-9\\-\\s]+$");
