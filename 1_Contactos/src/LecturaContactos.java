@@ -77,6 +77,8 @@ public class LecturaContactos {
                         System.out.println(ANSI_YELLOW + "\n-----------------------------------\n" + ANSI_RESET);
                     }
                 }
+
+                System.out.println(ANSI_CYAN + "-----------------------------------\nLectura finalizada" + ANSI_RESET);
                 //FileReader y Buffered Reader se cierran automáticamente
             }
         } catch (FileNotFoundException e) {
