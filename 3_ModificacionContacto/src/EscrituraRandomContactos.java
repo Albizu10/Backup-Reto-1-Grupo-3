@@ -57,8 +57,10 @@ public class EscrituraRandomContactos {
             for(int i=0; i<arrayNomCompl.length; i++){
                 escribirContacto(rndmAF, arrayNomCompl[i], arrayCorreos[i], arrayTelefonos[i], arrayCiudades[i], arrayPaises[i]);
                     
-                System.out.println(ANSI_GREEN + "\n---------------------------------------------------------------------\n\nEscribiendo los datos del contacto: " + arrayNomCompl[i] + " \n" + ANSI_RESET);
+                System.out.println("Escribiendo los datos del contacto: " + arrayNomCompl[i] + ANSI_GREEN + "\n\n---------------------------------------------------------------------\n" + ANSI_RESET);
             }
+
+            System.out.println(ANSI_CYAN + "\n------------------------------------\nSe han guardado " + arrayNomCompl.length + " contactos");
         } catch (FileNotFoundException e) {
             //Mostrar mensaje de excepción si el archivo no existe
             System.err.println(ANSI_RED);
