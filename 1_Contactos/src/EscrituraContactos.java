@@ -35,97 +35,94 @@ public class EscrituraContactos {
      * @param args
      */
     public static void main(String[] args) {
-        //Try catch para manejar excepciones
-        try {
-            //Definir ruta del archivo donde se guardan los contactos
-            File ruta = new File("contactos.csv");
+        //Definir ruta del archivo donde se guardan los contactos
+        File ruta = new File("contactos.csv");
 
-            //Try with resources para que los recursos se cierren automaticamente
-            try (FileWriter fr = new FileWriter(ruta, true)) {
-                //Inicializar Buffered Writer
-                BufferedWriter bw = new BufferedWriter(fr);
+        //Try with resources para que los recursos se cierren automaticamente
+        try (FileWriter fr = new FileWriter(ruta, true)) {
+            //Inicializar Buffered Writer
+            BufferedWriter bw = new BufferedWriter(fr);
 
-                //Inicializar Scanner
-                Scanner sc = new Scanner(System.in);
+            //Inicializar Scanner
+            Scanner sc = new Scanner(System.in);
 
-                //Inicializar variables
-                String nombre, apellido, correo, telefono, ciudad, pais;
-                boolean seguirEscribiendo = true;
+            //Inicializar variables
+            String nombre, apellido, correo, telefono, ciudad, pais;
+            boolean seguirEscribiendo = true;
 
-                //Mensaje inicial
-                System.out.println(ANSI_CYAN + "\nESCRITURA DE NUEVOS CONTACTOS \n------------------------------------\n" + ANSI_RESET);
+            //Mensaje inicial
+            System.out.println(ANSI_CYAN + "\nESCRITURA DE NUEVOS CONTACTOS \n------------------------------------\n" + ANSI_RESET);
 
-                //Bucle para escribir contactos hasta que el usuario decida salie
-                while (seguirEscribiendo == true) {
-                    //Menu
-                    System.out.println(ANSI_CYAN + "1) Escribir \n2) Salir\n" + ANSI_RESET);
+            //Bucle para escribir contactos hasta que el usuario decida salie
+            while (seguirEscribiendo == true) {
+                //Menu
+                System.out.println(ANSI_CYAN + "1) Escribir \n2) Salir\n" + ANSI_RESET);
 
-                    try {
-                        //Leer opción del usuario
-                        int opcion = sc.nextInt();
-                        sc.nextLine(); //Limpiar tras leer un int
+                try {
+                    //Leer opción del usuario
+                    int opcion = sc.nextInt();
+                    sc.nextLine(); //Limpiar tras leer un int
 
-                        
-                        if (opcion == 1) {
-                        //1) ESCRIBIR
-                            //Solicitar datos de contacto
-                            System.out.println(ANSI_MAGENTA + "\nNombre: " + ANSI_RESET);
-                            nombre = sc.nextLine();
+                    
+                    if (opcion == 1) {
+                    //1) ESCRIBIR
+                        //Solicitar datos de contacto y verificar que no están vacios
+                        nombre = solicitarDato(sc, "Nombre");
 
-                            System.out.println(ANSI_MAGENTA + "\nApellido: " + ANSI_RESET);
-                            apellido = sc.nextLine();
+                        apellido = solicitarDato(sc, "Apellido");
 
-                            //Solicitar y validar correo electrónico hasta introducir un formato correcto
-                            do {
-                                System.out.println(ANSI_MAGENTA + "\nCorreo electrónico: " + ANSI_RESET);
-                                correo = sc.nextLine();
-                                if (!validarCorreo(correo)) {
-                                    System.out.println(ANSI_YELLOW + "\nEl formato del correo electrónico introducido no es correcto, vuelva a escribirlo" + ANSI_RESET);
-                                }
-                            } while (!validarCorreo(correo));
+                        //Solicitar y validar correo electrónico hasta introducir un formato correcto
+                        do {
+                            System.out.println(ANSI_MAGENTA + "\nCorreo electrónico: " + ANSI_RESET);
+                            correo = sc.nextLine();
+                            if (correo.isEmpty()) {
+                                System.out.println(ANSI_YELLOW + "El correo no puede estar vacío. Vuelva a intentarlo." + ANSI_RESET);
+                            } else if (!validarCorreo(correo)) {
+                                System.out.println(ANSI_YELLOW + "\nEl formato del correo electrónico introducido no es correcto, vuelva a escribirlo" + ANSI_RESET);
+                            }
+                        } while (correo.isEmpty() || !validarCorreo(correo));
 
-                            //Solicitar y validar teléfono hasta introducir un formato correcto
-                            do {
-                                System.out.println(ANSI_MAGENTA + "\nTeléfono: " + ANSI_RESET);
-                                telefono = sc.nextLine();
-                                if (!validarTelefono(telefono)) {
-                                    System.out.println(ANSI_YELLOW + "\nEl formato del teléfono introducido no es correcto. Use solo dígitos, espacios, guiones o el símbolo '+'\n" + ANSI_RESET);
-                                }
-                            } while (!validarTelefono(telefono));
+                        //Solicitar y validar teléfono hasta introducir un formato correcto
+                        do {
+                            System.out.println(ANSI_MAGENTA + "\nTeléfono: " + ANSI_RESET);
+                            telefono = sc.nextLine();
+                            if (telefono.isEmpty()) {
+                                System.out.println(ANSI_YELLOW + "El teléfono no puede estar vacío. Vuelva a intentarlo." + ANSI_RESET);
+                            } else if (!validarTelefono(telefono)) {
+                                System.out.println(ANSI_YELLOW + "\nEl formato del teléfono introducido no es correcto. Use solo dígitos, espacios, guiones o el símbolo '+'\n" + ANSI_RESET);
+                            }
+                        } while (telefono.isEmpty() || !validarTelefono(telefono));
 
-                            System.out.println(ANSI_MAGENTA + "\nCiudad: " + ANSI_RESET);
-                            ciudad = sc.nextLine();
+                        ciudad = solicitarDato(sc, "Ciudad");
 
-                            System.out.println(ANSI_MAGENTA + "\nPaís:" + ANSI_RESET);
-                            pais = sc.nextLine();
+                        pais = solicitarDato(sc, "Pais");
 
-                            //Escribir datos en el archivo CSV siguiendo la estructura (comillas y comas)
-                            bw.write("\n\"" + nombre + " " + apellido + "\",\"" + correo.toLowerCase() + "\",\"" + telefono + "\",\"" + ciudad + "\",\"" + pais + "\"");
+                        //Escribir datos en el archivo CSV siguiendo la estructura (comillas y comas)
+                        bw.write("\n\"" + nombre + " " + apellido + "\",\"" + correo.toLowerCase() + "\",\"" + telefono + "\",\"" + ciudad + "\",\"" + pais + "\"");
+                        bw.flush(); //Para escribir inmediatamente
 
-                            //Mensaje de confirmación para el usuario
-                            System.out.println(ANSI_GREEN + "\n---------------------------------------------------------------------\n\nEscribiendo los datos del contacto: " + nombre + " " + apellido + " \n\n" + ANSI_RESET);
-                        } else if (opcion == 2) {
-                        //2) SALIR
-                            //Salir del programa e informar al usuario
-                            seguirEscribiendo = false;
-                            System.out.println(
-                                    ANSI_CYAN + "\n------------------------------------\nSaliendo...\n" + ANSI_RESET);
-                        } else {
-                        //NO 1 / 2
-                            //Informar al usuario que debe introducir el número 1 o 2
-                            System.out.println(ANSI_YELLOW + "\nEl número introducido no es correcto, escriba 1 o 2 para indicar la acción que quiere realizar\n" + ANSI_RESET);
-                        }
-                    } catch (InputMismatchException e) {
-                    //NO NÚMERO
-                        //Informar al usuario que debe introducir un número
-                        System.out.println(ANSI_YELLOW + "\nEl formato de dato introducido no es correcto, escriba un número, por favor\n"+ ANSI_RESET);
-                        sc.nextLine(); //Limpiar para evitar bucles infinitos
+                        //Mensaje de confirmación para el usuario
+                        System.out.println(ANSI_GREEN + "\n---------------------------------------------------------------------\n\nEscribiendo los datos del contacto: " + nombre + " " + apellido + " \n\n" + ANSI_RESET);
+                    } else if (opcion == 2) {
+                    //2) SALIR
+                        //Salir del programa e informar al usuario
+                        seguirEscribiendo = false;
+                        System.out.println(
+                                ANSI_CYAN + "\n------------------------------------\nSaliendo...\n" + ANSI_RESET);
+                    } else {
+                    //NO 1 / 2
+                        //Informar al usuario que debe introducir el número 1 o 2
+                        System.out.println(ANSI_YELLOW + "\nEl número introducido no es correcto, escriba 1 o 2 para indicar la acción que quiere realizar\n" + ANSI_RESET);
                     }
+                } catch (InputMismatchException e) {
+                //NO NÚMERO
+                    //Informar al usuario que debe introducir un número
+                    System.out.println(ANSI_YELLOW + "\nEl formato de dato introducido no es correcto, escriba un número, por favor\n"+ ANSI_RESET);
+                    sc.nextLine(); //Limpiar para evitar bucles infinitos
                 }
-                sc.close();
-                //Se cierran File Writer y BufferedWriter
             }
-
+            sc.close();
+            //File Writer y BufferedWriter se cierran automáticamente
         } catch (FileNotFoundException e) {
             //Mostrar mensaje de excepción si el archivo no existe
             System.err.println(ANSI_RED);
@@ -141,10 +138,34 @@ public class EscrituraContactos {
     }
 
     /**
+     * Función para solicitar un dato y asegurarse de que no está vacío.
+     * 
+     * @param sc Scanner para leer la entrada del usuario
+     * @param campo Nombre del campo que se está solicitando
+     * @return El valor introducido por el usuario
+     */
+    private static String solicitarDato(Scanner sc, String campo) {
+        //Variable para guardar el dato que introduce el usuario
+        String dato;
+        
+        //Solicita el dato hasta que el usuario lo introduzca
+        do {
+            System.out.println(ANSI_MAGENTA + "\n" + campo + ": " + ANSI_RESET);
+            dato = sc.nextLine();
+            if (dato.isEmpty()) {
+                System.out.println(ANSI_YELLOW + "El " + campo.toLowerCase() + " no puede estar vacío, vuelva a intentarlo." + ANSI_RESET);
+            }
+        } while (dato.isEmpty());
+
+        //Devuelve el dato
+        return dato;
+    }    
+
+    /**
      * Función para validar que el formato del correo electrónico es correcto mediante una expresión regular
      *
-     * @param correo (dato que introduce el usuario)
-     * @return (si el formato es correcto devuelve true)
+     * @param correo Dato que introduce el usuario
+     * @return Si el formato es correcto devuelve true
      */
     private static Boolean validarCorreo(String correo) {
         //Definir el patrón: números / letras / guiones + @ + números / letras + . + 2-6 letras
@@ -158,8 +179,8 @@ public class EscrituraContactos {
     /**
      * Función para validar que el formato del teléfono es correcto mediante una expresión regular
      * 
-     * @param telefono (dato que introduce el usuario)
-     * @return (si el formato es correcto devuelve true)
+     * @param telefono Dato que introduce el usuario
+     * @return Si el formato es correcto devuelve true
      */
     private static boolean validarTelefono(String telefono) {
         //Permitir +, dígitos, espacios y guiones
