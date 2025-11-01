@@ -55,7 +55,7 @@ public class LecturaContactos {
                     String[] campos = lineaSinSeparador.split(",");
 
                     //Si la línea tiene los 5 campos, imprimir los datos
-                    if (campos.length >= 5) {
+                    if (campos.length == 5) {
                         //Asignar cada valor de X campo a su variable indibidual
                         String nombreCompleto = campos[0];
                         String correo = campos[1];
