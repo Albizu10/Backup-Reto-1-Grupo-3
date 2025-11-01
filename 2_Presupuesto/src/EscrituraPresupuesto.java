@@ -5,54 +5,74 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class EscrituraPresupuesto {
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_GREEN = "\u001B[32m";
+    /**Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
+    /**Código ANSI para imprimir los errores en color rojo en la terminal */
+    public static final String ANSI_RED = "\u001B[31m";
+    /**Código ANSI para imprimir los resultados en color verde en la terminal */
+    public static final String ANSI_GREEN = "\u001B[32m";
+    /**Código ANSI para indicar que el formato de los datos introducidos no es correcto, color amarillo en la terminal*/
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    /**Código ANSI para indicar los datos que tiene que introducir el usuario en color magenta en la terminal */
+    public static final String ANSI_MAGENTA = "\u001B[35m";
+    /**Código ANSI para imprimir los menus / enunciados en color cyan en la terminal */
+    public static final String ANSI_CYAN = "\u001B[36m";
 
+    /**
+     * Método principal para copiar un archivo PDF a otro y mostrar su contenido en formato hexadecimal
+     * @param args
+     */
     public static void main(String[] args) {
-        try {
-            File rutaLectura = new File("Presupuesto - S00007.pdf");
-            File rutaEscritura = new File("Presupuesto - S00007_copia.pdf");
+        //Definir las rutas de los archivos de lectura y escritura
+        File rutaLectura = new File("Presupuesto - S00007.pdf");
+        File rutaEscritura = new File("Presupuesto - S00007_copia.pdf");
 
-            System.out.println(
-                    ANSI_BLUE + "\nCOPIANDO FICHERO '" + rutaLectura + "' A '" + rutaEscritura + "'" + ANSI_RESET);
-            System.out.println(ANSI_BLUE
-                    + "\n------------------------------------------------------------------------------------\n"
-                    + ANSI_RESET);
+        //Mensaje inicial
+        System.out.println(ANSI_CYAN + "\nCOPIANDO FICHERO '" + rutaLectura + "' A '" + rutaEscritura + "'" + ANSI_RESET);
+        System.out.println(ANSI_CYAN + "\n------------------------------------------------------------------------------------\n" + ANSI_RESET);
 
-            System.out.println(ANSI_YELLOW + "Contenido que se escribirá en la copia del fichero '" + rutaLectura + "':"
-                    + ANSI_RESET);
-            System.out.println(ANSI_YELLOW + "\n------------------------------------------------------------------------------------\n" + ANSI_RESET);
+        System.out.println(ANSI_MAGENTA + "Contenido que se escribirá en la copia del fichero '" + rutaLectura + "':" + ANSI_RESET);
+        System.out.println(ANSI_MAGENTA + "\n------------------------------------------------------------------------------------\n" + ANSI_RESET);
 
-            try (FileInputStream filein = new FileInputStream(rutaLectura)) {
-                int byteLeido;
-                while ((byteLeido = filein.read()) != -1) {
-                    System.out.printf("%02X ", byteLeido);
-                }
-
-                filein.close();
+        //Try with resources para leer e imprimir el archivo
+        try (FileInputStream filein = new FileInputStream(rutaLectura)) {
+            int byteLeido;
+            //Leer y mostrar el contenido en formato hexadecimal
+            while ((byteLeido = filein.read()) != -1) {
+                System.out.printf("%02X ", byteLeido);
             }
-
-            try (FileInputStream filein = new FileInputStream(rutaLectura);
-                    FileOutputStream fileout = new FileOutputStream(rutaEscritura)) {
-
-                int byteLeido;
-                while ((byteLeido = filein.read()) != -1) {
-                    fileout.write(byteLeido);
-                }
-                filein.close();
-                fileout.close();
-
-                System.out.println(ANSI_GREEN
-                    + "\n------------------------------------------------------------------------------------\n\nLa copia del presupuesto '"
-                    + rutaLectura + "' se ha realizado correctamente." + ANSI_RESET);
-            }
-
         } catch (FileNotFoundException e) {
+            //Mensaje de excepción si el archivo no existe / no lo encuentra
+            System.err.println(ANSI_RED);
             e.printStackTrace();
+            System.err.println(ANSI_RESET);
         } catch (IOException e) {
+            //Mensaje de excepciones generales
+            System.err.println(ANSI_RED);
             e.printStackTrace();
+            System.err.println(ANSI_RESET);
+        }
+
+        //Iniciar la copia
+        try (FileInputStream filein = new FileInputStream(rutaLectura); FileOutputStream fileout = new FileOutputStream(rutaEscritura)) {
+            int byteLeido;
+
+            //Leer del fichero de origen y escribir en el nuevo fichero byte a byte
+            while ((byteLeido = filein.read()) != -1) {
+                fileout.write(byteLeido);
+            }
+            
+            System.out.println(ANSI_GREEN + "\n------------------------------------------------------------------------------------\n\nLa copia del presupuesto '" + rutaLectura + "' se ha realizado correctamente." + ANSI_RESET);
+        } catch (FileNotFoundException e) {
+            //Mensaje de excepción si el archivo no existe / no lo encuentra
+            System.err.println(ANSI_RED);
+            e.printStackTrace();
+            System.err.println(ANSI_RESET);
+        } catch (IOException e) {
+            //Mensaje de excepciones generales
+            System.err.println(ANSI_RED);
+            e.printStackTrace();
+            System.err.println(ANSI_RESET);
         }
     }
 }
