@@ -16,7 +16,7 @@ public class EscrituraPresupuesto {
     public static final String ANSI_RED = "\u001B[31m";
     /**Código ANSI para imprimir los resultados en color verde en la terminal */
     public static final String ANSI_GREEN = "\u001B[32m";
-    /**Código ANSI para indicar que el formato de los datos introducidos no es correcto, color amarillo en la terminal*/
+    /**Código ANSI para indicar que el formato de los datos introducidos no es correcto, color amarillo en la terminal */
     public static final String ANSI_YELLOW = "\u001B[33m";
     /**Código ANSI para indicar los datos que tiene que introducir el usuario en color magenta en la terminal */
     public static final String ANSI_MAGENTA = "\u001B[35m";
