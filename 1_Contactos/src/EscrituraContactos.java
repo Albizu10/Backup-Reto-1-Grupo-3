@@ -144,7 +144,7 @@ public class EscrituraContactos {
      * @param campo Nombre del campo que se está solicitando
      * @return El valor introducido por el usuario
      */
-    private static String solicitarDato(Scanner sc, String campo) {
+    public static String solicitarDato(Scanner sc, String campo) {
         //Variable para guardar el dato que introduce el usuario
         String dato;
         
@@ -167,7 +167,7 @@ public class EscrituraContactos {
      * @param correo Dato que introduce el usuario
      * @return Si el formato es correcto devuelve true
      */
-    private static Boolean validarCorreo(String correo) {
+    public static Boolean validarCorreo(String correo) {
         //Definir el patrón: números / letras / guiones + @ + números / letras + . + 2-6 letras
         Pattern pattern = Pattern.compile("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$");
         //Verificar que el dato introducido por el usuario coincide con el patrón
@@ -182,7 +182,7 @@ public class EscrituraContactos {
      * @param telefono Dato que introduce el usuario
      * @return Si el formato es correcto devuelve true
      */
-    private static boolean validarTelefono(String telefono) {
+    public static boolean validarTelefono(String telefono) {
         //Permitir +, dígitos, espacios y guiones
         Pattern pattern = Pattern.compile("^[+]?[0-9\\-\\s]+$");
         //Verificar que el dato introducido por el usuario coincide con el patrón
