@@ -41,10 +41,10 @@ public class ContactosCSV {
 
         //MENÚ PRINCIPAL
         while (!salir) {
-            System.out.println(ANSI_CYAN + "\nMENÚ PRINCIPAL\n------------------------------------" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "\nMENÚ PRINCIPAL\n------------------------------------");
             System.out.println("1) Leer contactos");
             System.out.println("2) Escribir contactos");
-            System.out.println("3) Salir");
+            System.out.println("3) Salir"  + ANSI_RESET);
             System.out.print(ANSI_MAGENTA + "\nSeleccione una opción: " + ANSI_RESET);
 
             try {
