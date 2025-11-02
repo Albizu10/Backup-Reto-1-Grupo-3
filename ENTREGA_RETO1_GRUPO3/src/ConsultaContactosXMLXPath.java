@@ -14,6 +14,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -71,8 +72,14 @@ public class ConsultaContactosXMLXPath {
                 System.out.println(ANSI_CYAN + "4) Salir \n" + ANSI_RESET);
 
                 //Leer la opción del usuario
-                opcion = sc.nextInt();
-                sc.nextLine();
+                try {
+                    opcion = sc.nextInt();
+                    sc.nextLine();
+                } catch (InputMismatchException e) {
+                    sc.nextLine(); // Para salir del bucle
+                    opcion = -1;   // Asignar un valor no válido para que entre en default
+                }
+
 
                 switch (opcion) {
                     // CONSULTA 1: Obtener teléfono a partir de id
@@ -113,7 +120,7 @@ public class ConsultaContactosXMLXPath {
 
                     default:
                         //Si el usuario no introduce un número entre el 1 y el 4
-                        System.out.println(ANSI_YELLOW + "Escriba una opción válida (1-4)" + ANSI_RESET);
+                        System.out.println(ANSI_YELLOW + "\nEscriba una opción válida (1-4)" + ANSI_RESET);
                         break;
                 }
             }
@@ -178,7 +185,7 @@ public class ConsultaContactosXMLXPath {
 
         //Verificar si se han encontrado contactos
         if (contactos.getLength() > 0) {
-            System.out.println(ANSI_GREEN + "\n¡CONTACTOS ENCONTRADOS!" + ANSI_RESET);
+            System.out.println(ANSI_GREEN + "\n¡CONTACTO(S) ENCONTRADO(S)!" + ANSI_RESET);
             System.out.println(ANSI_GREEN + "\n------------------------------------" + ANSI_RESET);
 
             //Iterar sobre los contactos
