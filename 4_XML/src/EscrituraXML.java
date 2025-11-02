@@ -42,7 +42,7 @@ public class EscrituraXML {
         String[] arrayCiudades = { "Madrid", "Madrid", "Santander", "Quito", "Soria", "Albacete" };
         String[] arrayPaises = { "España", "España", "España", "España", "España", "España" };
 
-        // Mensaje inicial informando que estamos escribiendo en un archivo XML
+        // Mensaje inicial
         System.out.println(ANSI_CYAN + "\nESCRITURA DE NUEVOS CONTACTOS EN XML\n------------------------------------\n" + ANSI_RESET);
 
         //Try with resources para manejar los recursos de manera automática
