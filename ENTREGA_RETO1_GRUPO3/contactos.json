@@ -1,0 +1,50 @@
+[
+  {
+    "ID": 1,
+    "nombre completo": "Ada Martinez",
+    "correo": "adamartinez@techsolutuion.com",
+    "telefono": "555-0101",
+    "ciudad": "Madrid",
+    "pais": "España"
+  },
+  {
+    "ID": 2,
+    "nombre completo": "Administrator",
+    "correo": "ikmssaid24@lhusurbil.eus",
+    "telefono": "245-345",
+    "ciudad": "Madrid",
+    "pais": "España"
+  },
+  {
+    "ID": 3,
+    "nombre completo": "Carla Jimenez",
+    "correo": "carlajimenez@techsolutuion.com",
+    "telefono": "555-0102",
+    "ciudad": "Santander",
+    "pais": "España"
+  },
+  {
+    "ID": 4,
+    "nombre completo": "Comercializadora Ruiz S.A.",
+    "correo": "ruiz@gmail.com",
+    "telefono": "5664-7631",
+    "ciudad": "Quito",
+    "pais": "España"
+  },
+  {
+    "ID": 5,
+    "nombre completo": "Juan Martinez",
+    "correo": "juanmartinez@techsolutuion.com",
+    "telefono": "555-0103",
+    "ciudad": "Soria",
+    "pais": "España"
+  },
+  {
+    "ID": 6,
+    "nombre completo": "Laura Hernandez",
+    "correo": "laurahernandez@gmail.com",
+    "telefono": "6234-8909",
+    "ciudad": "Albacete",
+    "pais": "España"
+  }
+]

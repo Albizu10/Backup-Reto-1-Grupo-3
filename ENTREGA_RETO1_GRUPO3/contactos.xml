@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Contactos>
+    <Contacto id="1">
+        <NombreCompleto>Ada Martinez</NombreCompleto>
+        <CorreoElectronico>adamartinez@techsolutuion.com</CorreoElectronico>
+        <Telefono>555-0101</Telefono>
+        <Ciudad>Madrid</Ciudad>
+        <Pais>España</Pais>
+    </Contacto>
+    <Contacto id="2">
+        <NombreCompleto>Administrator</NombreCompleto>
+        <CorreoElectronico>ikmssaid24@lhusurbil.eus</CorreoElectronico>
+        <Telefono>245-345</Telefono>
+        <Ciudad>Madrid</Ciudad>
+        <Pais>España</Pais>
+    </Contacto>
+    <Contacto id="3">
+        <NombreCompleto>Carla Jimenez</NombreCompleto>
+        <CorreoElectronico>carlajimenez@techsolutuion.com</CorreoElectronico>
+        <Telefono>555-0102</Telefono>
+        <Ciudad>Santander</Ciudad>
+        <Pais>España</Pais>
+    </Contacto>
+    <Contacto id="4">
+        <NombreCompleto>Comercializadora Ruiz S.A.</NombreCompleto>
+        <CorreoElectronico>ruiz@gmail.com</CorreoElectronico>
+        <Telefono>5664-7631</Telefono>
+        <Ciudad>Quito</Ciudad>
+        <Pais>España</Pais>
+    </Contacto>
+    <Contacto id="5">
+        <NombreCompleto>Juan Martinez</NombreCompleto>
+        <CorreoElectronico>juanmartinez@techsolutuion.com</CorreoElectronico>
+        <Telefono>555-0103</Telefono>
+        <Ciudad>Soria</Ciudad>
+        <Pais>España</Pais>
+    </Contacto>
+    <Contacto id="6">
+        <NombreCompleto>Laura Hernandez</NombreCompleto>
+        <CorreoElectronico>laurahernandez@gmail.com</CorreoElectronico>
+        <Telefono>6234-8909</Telefono>
+        <Ciudad>Albacete</Ciudad>
+        <Pais>España</Pais>
+    </Contacto>
+</Contactos>
