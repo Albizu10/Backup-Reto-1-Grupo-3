@@ -85,7 +85,7 @@ public class ModificacionContacto3DAT {
                     System.out.print(ANSI_MAGENTA + "\n¿Cambiar " + campos[i].toLowerCase() + "? (s/n): " + ANSI_RESET);
                     opcion = sc.nextLine().trim().toLowerCase();
                     if (!opcion.equals("s") && !opcion.equals("n")) {
-                        System.out.println(ANSI_YELLOW + "El dato introducido no es correcto, escriba 's' o 'n'" + ANSI_RESET);
+                        System.out.println(ANSI_YELLOW + "\nEl dato introducido no es correcto, escriba 's' o 'n'" + ANSI_RESET);
                     }
                 } while (!opcion.equals("s") && !opcion.equals("n"));
 
@@ -100,9 +100,9 @@ public class ModificacionContacto3DAT {
                         if (nuevoValor.isEmpty()) {
                             System.out.println(ANSI_YELLOW + "El campo no puede estar vacío. Inténtelo de nuevo." + ANSI_RESET);
                         } else if (campos[i].equals("Correo electrónico") && !validarCorreo(nuevoValor)) {
-                            System.out.println(ANSI_YELLOW + "Formato de correo no válido. Inténtelo de nuevo." + ANSI_RESET);
+                            System.out.println(ANSI_YELLOW + "\nFormato de correo no válido. Inténtelo de nuevo." + ANSI_RESET);
                         } else if (campos[i].equals("Teléfono") && !validarTelefono(nuevoValor)) {
-                            System.out.println(ANSI_YELLOW + "Formato de teléfono no válido. Inténtelo de nuevo." + ANSI_RESET);
+                            System.out.println(ANSI_YELLOW + "\nFormato de teléfono no válido. Inténtelo de nuevo." + ANSI_RESET);
                         } else {
                             valores[i] = nuevoValor;
                             break; // salir del bucle solo si todo está bien
@@ -110,7 +110,7 @@ public class ModificacionContacto3DAT {
                     } while (true);
                 } else {
                 //NO    
-                    System.out.println(ANSI_CYAN + "\nNo se modificará el " + campos[i] + ANSI_RESET);
+                    System.out.println(ANSI_CYAN + "\nNo se modificará el campo '" + campos[i].toLowerCase() + "'" + ANSI_RESET);
                 }
             }
 
