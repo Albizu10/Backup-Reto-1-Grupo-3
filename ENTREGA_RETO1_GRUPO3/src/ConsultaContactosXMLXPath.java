@@ -19,6 +19,11 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Clase que permite realizar consultas sobre un archivo XML, en este caso, 'contactos.xml'
+ * 
+ * @version 1.0
+ */
 public class ConsultaContactosXMLXPath {
     /** Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
