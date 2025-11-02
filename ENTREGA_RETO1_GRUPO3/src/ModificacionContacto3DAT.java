@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  * 
  * @version 1.0
  */
-public class ModificacionContacto3 {
+public class ModificacionContacto3DAT {
     /**Longitud específica para cada campo*/
     private static final int LONG_NOMBRECOMPLETO = 35;
     private static final int LONG_CORREO = 35;

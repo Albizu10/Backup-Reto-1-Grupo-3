@@ -8,7 +8,7 @@ import java.io.IOException;
  * Clase que permite leer los contactos de un archivo CSV, en este caso, 'contactos.csv'
  * @version 1.0
  */
-public class LecturaContactos {
+public class LecturaContactosCSV {
     /**Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
     /**Código ANSI para imprimir los errores en color rojo en la terminal */

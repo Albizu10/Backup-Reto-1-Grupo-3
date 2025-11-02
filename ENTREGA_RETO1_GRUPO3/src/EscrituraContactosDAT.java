@@ -9,7 +9,7 @@ import java.io.RandomAccessFile;
  * 
  * @version 1.0
  */
-public class EscrituraRandomContactos {
+public class EscrituraContactosDAT {
     /**Longitud específica para cada campo*/
     private static final int LONG_NOMBRECOMPLETO = 35;
     private static final int LONG_CORREO = 35;

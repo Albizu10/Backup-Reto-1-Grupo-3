@@ -17,7 +17,7 @@ import java.util.Map;
  * 
  * @version 1.0
  */
-public class LecturaJSON {
+public class LecturaContactosJSON {
     /**Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
     /**Código ANSI para imprimir los resultados en color verde en la terminal */

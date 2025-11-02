@@ -18,7 +18,7 @@ import java.io.File;
  * 
  * @version 1.0
  */
-public class EscrituraXML {
+public class EscrituraContactosXML {
     /**Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
     /**Código ANSI para imprimir los errores en color rojo en la terminal */

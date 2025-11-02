@@ -18,7 +18,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ConsultaXMLXPath {
+public class ConsultaContactosXMLXPath {
     /** Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
     /** Código ANSI para imprimir los errores en color rojo en la terminal */

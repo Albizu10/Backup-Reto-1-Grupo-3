@@ -14,7 +14,7 @@ import com.google.gson.JsonObject;
  * 
  * @version 1.0
  */
-public class EscrituraJSON {
+public class EscrituraContactosJSON {
     /**Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
     /**Código ANSI para imprimir los resultados en color verde en la terminal */

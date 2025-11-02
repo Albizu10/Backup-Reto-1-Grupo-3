@@ -14,7 +14,7 @@ import org.w3c.dom.Element;
  * Clase que permite leer los contactos de un archivo XML, en este caso, 'contactos.xml'
  * @version 1.0
  */
-public class LecturaXML {
+public class LecturaContactosXML {
     /**Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
     /**Código ANSI para imprimir los errores en color rojo en la terminal */

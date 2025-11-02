@@ -14,7 +14,7 @@ import java.io.IOException;
  * 
  * @version 1.0
  */
-public class EscrituraContactos {
+public class EscrituraContactosCSV {
     /**Código ANSI para restablecer el color de la terminal */
     public static final String ANSI_RESET = "\u001B[0m";
     /**Código ANSI para imprimir los errores en color rojo en la terminal */
