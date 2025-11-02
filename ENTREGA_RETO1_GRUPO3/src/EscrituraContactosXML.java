@@ -3,7 +3,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Attr;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -72,7 +71,6 @@ public class EscrituraContactosXML {
                 Element contacto = doc.createElement("Contacto");
 
                 // Asignar un ID único al contacto (usamos el índice + 1)
-                Attr id = doc.createAttribute("id");
                 contacto.setAttribute("id", String.valueOf(i + 1));
                 contactos.appendChild(contacto);
 
