@@ -75,9 +75,16 @@ public class NuevoContactoJSON {
             //Opciones del menú
             System.out.println(ANSI_CYAN + "1) Escribir nuevo contacto \n2) Salir\n" + ANSI_RESET);
             try {
+                int opcion;
+
                 //Lee la opción del usuario
-                int opcion = sc.nextInt();
-                sc.nextLine();
+                try {
+                    opcion = sc.nextInt();
+                    sc.nextLine();
+                } catch (InputMismatchException e) {
+                    sc.nextLine(); // Para salir del bucle
+                    opcion = -1;   // Asignar un valor no válido para que entre en el else
+                }
 
                 //OPCIÓN 1: Escribir nuevo contacto
                 if (opcion == 1) {
@@ -91,7 +98,7 @@ public class NuevoContactoJSON {
                     do {
                         correo = solicitarDato(sc, "Correo electrónico");
                         if (!validarCorreo(correo)) {
-                            System.out.println(ANSI_YELLOW + "Formato de correo no válido. Vuelva a intentarlo.\n" + ANSI_RESET);
+                            System.out.println(ANSI_YELLOW + "\nFormato de correo no válido. Vuelva a intentarlo.\n" + ANSI_RESET);
                         }
                     } while (!validarCorreo(correo));
 
@@ -99,7 +106,7 @@ public class NuevoContactoJSON {
                     do {
                         telefono = solicitarDato(sc, "Teléfono");
                         if (!validarTelefono(telefono)) {
-                            System.out.println(ANSI_YELLOW + "Formato de teléfono no válido. Solo se permiten dígitos, espacios, guiones o '+'.\n" + ANSI_RESET);
+                            System.out.println(ANSI_YELLOW + "\nFormato de teléfono no válido. Solo se permiten dígitos, espacios, guiones o '+'.\n" + ANSI_RESET);
                         }
                     } while (!validarTelefono(telefono));
 
@@ -137,10 +144,10 @@ public class NuevoContactoJSON {
                 } else if (opcion == 2) { 
                     //SALIR
                     seguirEscribiendo = false;
-                    System.out.println(ANSI_CYAN + "\nSaliendo del programa...\n" + ANSI_RESET);
+                    System.out.println(ANSI_CYAN + "\n------------------------------------\nSaliendo del programa...\n" + ANSI_RESET);
                 } else {
                     //Opción no válida
-                    System.out.println(ANSI_YELLOW + "Debe elegir 1 o 2.\n" + ANSI_RESET);
+                    System.out.println(ANSI_YELLOW + "\nDebe elegir 1 o 2.\n" + ANSI_RESET);
                 }
 
             } catch (InputMismatchException e) { 
